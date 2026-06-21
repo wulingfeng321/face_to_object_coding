@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WuLingfeng's Games Center</title>
+    <link rel="stylesheet" href="/static/base.css">
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    {% block head %}{% endblock %}
+</head>
+<body>
+<div class="top-area">
+    <h1 class="top-heading">WuLingfeng's Games Center</h1>
+    <div class="current-game">{{ session.get('cur_game','') | capitalize }}</div>
+    <nav class="menu">
+        <ul>
+            <li><a href="/select">选择</a></li>
+            <li><a href="/new_game">新游戏</a></li>
+            <li><a href="/game">游戏</a></li>
+            <li><a href="/rules">规则</a></li>
+            <li><a href="/log">日志</a></li>
+            <li><a href="/about">关于</a></li>
+        </ul>
+    </nav>
+</div>
+
+{% block main_content %}
+{% endblock %}
+
+<!-- [修改] 添加工信部ICP备案号和公安联网备案号 -->
+<footer>
+    <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备2026024876号</a>
+    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=15010502002517" target="_blank">蒙公网安备15010502002517号</a>
+</footer>
+</body>
+</html>

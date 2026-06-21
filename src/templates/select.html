@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block main_content %}
+    <h2 class="caution">注意：选择游戏将销毁当前游戏进度</h2>
+    <div class="game_pool">
+        <a href="{{ url_for('select_game', target_game='blackjack') }}"
+           class={{ "active" if cur_game=='blackjack' else "inactive" }}>
+            <h3>Blackjack</h3>
+            <p>经典纸牌游戏，玩家目标是让手牌点数尽量接近21点但不超过，与庄家竞争。人头牌计为10点。</p>
+        </a>
+        <a href="{{ url_for('select_game', target_game='blackjack_eu') }}"
+           class={{ "active" if cur_game=='blackjack_eu' else "inactive" }}>
+            <h3>欧式Blackjack</h3>
+            <p>欧洲版Blackjack，庄家起始只发一张明牌，在玩家完成所有操作后才检查Blackjack。</p>
+        </a>
+    </div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block main_content %}
+    <div class="text-box">
+        {% if supported %}
+            <h2>关于 WuLingfeng's Games Center</h2>
+            <p>欢迎来到WuLingfeng's Games Center！这是一个享受有趣互动游戏的地方。我们的使命是为所有年龄段的玩家提供娱乐和挑战。</p>
+            <p>当前版本包含Blackjack和欧式Blackjack两个游戏。更多游戏即将推出，敬请期待！我们不断改进此应用以提升您的体验。</p>
+            <p>联系我们：<a href="mailto:rustacean@126.com">rustacean@126.com</a></p>
+        {% else %}
+            <h2>您请求的游戏目前不受支持。</h2>
+        {% endif %}
+    </div>
+{% endblock %}
