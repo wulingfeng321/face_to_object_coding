@@ -13,5 +13,10 @@
             <h3>欧式Blackjack</h3>
             <p>欧洲版Blackjack，庄家起始只发一张明牌，在玩家完成所有操作后才检查Blackjack。</p>
         </a>
+        <a href="{{ url_for('select_game', target_game='whist') }}"
+           class={{ "active" if cur_game=='whist' else "inactive" }}>
+            <h3>Whist</h3>
+            <p>经典四人定约桥牌前身的吃墩类纸牌游戏，采用固定搭档形式。南-北 vs 西-东，率先赢得7墩获胜。</p>
+        </a>
     </div>
 {% endblock %}

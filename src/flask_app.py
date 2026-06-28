@@ -3,9 +3,9 @@ import uuid
 import argparse
 from flask import Flask, render_template, redirect, url_for, session
 from playcard import get_card_name
-import blackjack, blackjack_eu
+import blackjack, blackjack_eu, whist
 
-SUPPORTED_GAMES = {'blackjack': blackjack, 'blackjack_eu': blackjack_eu}
+SUPPORTED_GAMES = {'blackjack': blackjack, 'blackjack_eu': blackjack_eu, 'whist': whist}
 app = Flask(__name__)
 # Generate a random secret key for the session
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', os.urandom(24))
@@ -40,7 +40,7 @@ def game():
     else:
         return redirect(url_for('select'))
 
-@app.route('/game_update/<action>')
+@app.route('/game_update/<path:action>')
 def game_update(action):
     cur_game = session.get('cur_game', '')
     if cur_game in SUPPORTED_GAMES:

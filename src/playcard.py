@@ -33,3 +33,7 @@ RANK_NAME_MAP = {'A':'1', '2':'2', '3':'3', '4':'4', '5':'5', '6':'6', '7':'7', 
 
 def get_card_name(card):
     return f'{SUIT_NAME_MAP[card[1]]}_{RANK_NAME_MAP[card[0]]}'
+
+def get_suit_name(suit: str) -> str:
+    # Return the full name of the suit.
+    return SUIT_NAME_MAP[suit]
